@@ -16,6 +16,13 @@ public class QuickFind extends UFModel {
     }
 
     @Override protected void union(int p, int q) {
-        ufArray[p] = q;
+        if (!connected(p, q)) {
+            int pTemp = ufArray[p];
+            int qTemp = ufArray[q];
+            for (int i = 0; i < N; i++) {
+                if (ufArray[i] == pTemp)
+                    ufArray[i] = qTemp;
+            }
+        }
     }
 }

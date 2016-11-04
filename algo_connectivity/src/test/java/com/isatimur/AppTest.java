@@ -37,6 +37,11 @@ public class AppTest
         ufModel.union(1, 0);
         assertTrue(ufModel.connected(0, 1));
         assertTrue(ufModel.connected(1, 0));
+        ufModel.union(4, 3);
+        ufModel.union(3, 8);
+        ufModel.union(9, 8);
+
+        assertTrue(ufModel.connected(3, 9));
 
     }
 }
