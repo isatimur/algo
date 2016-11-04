@@ -68,6 +68,9 @@ hs_err_pid*
 target/
 
 *.iml
+others/others.iml
+algo_connectivity/algorithms.iml
+algo_and_data_struct.iml
 
 # User-specific stuff:
 .idea
