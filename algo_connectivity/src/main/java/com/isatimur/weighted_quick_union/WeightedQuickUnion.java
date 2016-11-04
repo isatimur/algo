@@ -20,6 +20,8 @@ public class WeightedQuickUnion extends UFModel {
 
     private int root(int i) {
         while (i != ufArray[i]) {
+            //this line of code adds path compression
+            ufArray[i] = ufArray[ufArray[i]];
             i = ufArray[i];
         }
         return i;
