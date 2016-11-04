@@ -1,4 +1,4 @@
-package com.isatimur.others;
+package com.isatimur.randomly;
 
 import java.util.Random;
 
