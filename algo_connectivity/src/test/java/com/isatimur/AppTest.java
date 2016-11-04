@@ -1,5 +1,6 @@
 package com.isatimur;
 
+import com.isatimur.model.UFModel;
 import com.isatimur.quick_find.QuickFind;
 import com.isatimur.quick_union.QuickUnion;
 import com.isatimur.weighted_quick_union.WeightedQuickUnion;

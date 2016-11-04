@@ -1,5 +1,6 @@
 package com.isatimur;
 
+import com.isatimur.model.UFModel;
 import com.isatimur.quick_find.QuickFind;
 import java.util.Scanner;
 

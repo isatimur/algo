@@ -1,6 +1,6 @@
 package com.isatimur.quick_find;
 
-import com.isatimur.UFModel;
+import com.isatimur.model.UFModel;
 
 /**
  * Created by developer on 11/4/16.

@@ -1,4 +1,4 @@
-package com.isatimur;
+package com.isatimur.model;
 
 /**
  * Created by developer on 11/4/16.
