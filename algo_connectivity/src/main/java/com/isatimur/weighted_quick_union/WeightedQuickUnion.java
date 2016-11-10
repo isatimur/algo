@@ -14,7 +14,8 @@ public class WeightedQuickUnion extends UFModel {
         sz = new int[N];
     }
 
-    @Override protected boolean connected(int p, int q) {
+    @Override
+    public boolean connected(int p, int q) {
         return root(p) == root(q);
     }
 
@@ -27,7 +28,8 @@ public class WeightedQuickUnion extends UFModel {
         return i;
     }
 
-    @Override protected void union(int p, int q) {
+    @Override
+    public void union(int p, int q) {
         int i = root(p);
         int j = root(q);
         if (i == j)

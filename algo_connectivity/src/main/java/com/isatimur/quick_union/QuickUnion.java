@@ -11,7 +11,8 @@ public class QuickUnion extends UFModel {
         super(N);
     }
 
-    @Override protected boolean connected(int p, int q) {
+    @Override
+    public boolean connected(int p, int q) {
         return root(p) == root(q);
     }
 
@@ -22,7 +23,8 @@ public class QuickUnion extends UFModel {
         return i;
     }
 
-    @Override protected void union(int p, int q) {
+    @Override
+    public void union(int p, int q) {
         int i = root(p);
         int j = root(q);
         ufArray[i] = j;

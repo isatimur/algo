@@ -13,6 +13,6 @@ public abstract class UFModel {
             ufArray[i] = i;
         }
     }
-    protected abstract boolean connected(int p, int q);
-    protected abstract void union(int p, int q);
+    public abstract boolean connected(int p, int q);
+    public abstract void union(int p, int q);
 }

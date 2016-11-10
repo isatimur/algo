@@ -11,11 +11,13 @@ public class QuickFind extends UFModel {
         super(N);
     }
 
-    @Override protected boolean connected(int p, int q) {
+    @Override
+    public boolean connected(int p, int q) {
         return ufArray[p] == ufArray[q];
     }
 
-    @Override protected void union(int p, int q) {
+    @Override
+    public void union(int p, int q) {
         if (!connected(p, q)) {
             int pTemp = ufArray[p];
             int qTemp = ufArray[q];
