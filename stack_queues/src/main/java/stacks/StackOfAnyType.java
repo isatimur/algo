@@ -6,11 +6,6 @@ package stacks;
 public class StackOfAnyType<T> {
     private Node<T> first = null;
 
-    private class Node<T> {
-        T item;
-        Node<T> next;
-    }
-
     public void push(T value) {
         Node<T> oldFirst = first;
         first = new Node<>();
@@ -26,5 +21,10 @@ public class StackOfAnyType<T> {
         T item = first.item;
         first = first.next;
         return item;
+    }
+
+    private class Node<T> {
+        T item;
+        Node<T> next;
     }
 }
