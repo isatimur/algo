@@ -1,5 +1,7 @@
 package stacks;
 
+import java.util.Stack;
+
 /**
  * Created by isati on 12.11.2016.
  */
