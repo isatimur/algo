@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 
 /**
  * Created by abyakimenko on 13.11.2016.
+ * complexity is N2/2
  */
 public class selectionSortTest extends TestCase {
 
