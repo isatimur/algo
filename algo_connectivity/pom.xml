@@ -4,11 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <groupId>com.learning.princeton.algo</groupId>
         <artifactId>algo_and_data_struct</artifactId>
-        <groupId>com.com.isatimur</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
 
 
     <artifactId>algorithms</artifactId>

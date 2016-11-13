@@ -3,7 +3,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.com.isatimur</groupId>
+  <groupId>com.learning.princeton.algo</groupId>
   <artifactId>algo_and_data_struct</artifactId>
   <version>1.0-SNAPSHOT</version>
 
@@ -23,6 +23,8 @@
   <modules>
     <module>algo_connectivity</module>
     <module>others</module>
+    <module>stack_queues</module>
+    <module>week_tasks</module>
   </modules>
 
   <packaging>pom</packaging>
