@@ -27,5 +27,4 @@ public class RandNumbers2 {
             System.out.println(i);
         }
     }
-
 }

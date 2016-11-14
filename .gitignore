@@ -67,7 +67,9 @@ hs_err_pid*
 ### Maven template
 target/
 
-*.iml
+**.iml
+
+
 others/others.iml
 algo_connectivity/algorithms.iml
 algo_and_data_struct.iml
