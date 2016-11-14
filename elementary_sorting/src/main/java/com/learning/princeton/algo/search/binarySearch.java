@@ -3,7 +3,7 @@ package com.learning.princeton.algo.search;
 /**
  * Created by abyakimenko on 10.11.2016.
  */
-public class binarySearch {
+public class BinarySearch {
 
     public static int executeSearch(int[] array, int key) {
 

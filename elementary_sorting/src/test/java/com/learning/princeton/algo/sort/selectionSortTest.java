@@ -12,7 +12,7 @@ public class selectionSortTest extends TestCase {
 
     public void testExecuteSorting() throws Exception {
 
-        selectionSort.executeSorting(arrayOfInts);
+        SelectionSort.executeSorting(arrayOfInts);
 
         assertEquals(arrayOfInts[0], 1);
         assertEquals(arrayOfInts[1], 2);

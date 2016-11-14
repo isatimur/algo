@@ -18,7 +18,7 @@ public class insertionSortTest extends TestCase {
 
     public void testExecuteSorting() throws Exception {
 
-        insertionSort.executeSorting(arrayOfInts);
+        InsertionSort.executeSorting(arrayOfInts);
 
         assertEquals(arrayOfInts[0], 1);
         assertEquals(arrayOfInts[1], 2);
@@ -28,7 +28,7 @@ public class insertionSortTest extends TestCase {
     public void testShellExecuteSorting() throws Exception {
 
         Comparable[] array = new Comparable[]{22, 11, 44, 57, 54, 57, 62, 42, 21, 11};
-        shellSort.executeSorting(array);
+        ShellSort.executeSorting(array);
 
         assertEquals(array[0], 11);
         assertEquals(array[1], 11);
