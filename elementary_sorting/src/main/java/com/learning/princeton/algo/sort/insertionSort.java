@@ -1,4 +1,4 @@
-package elementary.sort;
+package com.learning.princeton.algo.sort;
 
 /**
  * Created by abyakimenko on 13.11.2016.

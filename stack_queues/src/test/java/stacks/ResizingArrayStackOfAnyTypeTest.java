@@ -1,5 +1,6 @@
 package stacks;
 
+import com.learning.princeton.algo.stacks.ResizingArrayStackOfAnyType;
 import junit.framework.TestCase;
 
 /**

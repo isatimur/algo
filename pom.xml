@@ -25,6 +25,7 @@
     <module>others</module>
     <module>stack_queues</module>
     <module>week_tasks</module>
+    <module>elementary_sorting</module>
   </modules>
 
   <packaging>pom</packaging>

@@ -1,4 +1,4 @@
-package stacks;
+package com.learning.princeton.algo.stacks;
 
 /**
  * Created by isati on 12.11.2016.

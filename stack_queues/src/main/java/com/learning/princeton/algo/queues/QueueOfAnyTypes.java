@@ -1,4 +1,4 @@
-package queues;
+package com.learning.princeton.algo.queues;
 
 /**
  * Created by isati on 13.11.2016.

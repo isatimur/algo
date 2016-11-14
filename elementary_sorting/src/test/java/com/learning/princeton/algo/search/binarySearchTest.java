@@ -1,5 +1,6 @@
-package com.isatimur.search;
+package com.learning.princeton.algo.search;
 
+import com.learning.princeton.algo.search.binarySearch;
 import junit.framework.TestCase;
 
 /**

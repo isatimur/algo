@@ -1,5 +1,6 @@
 package stacks;
 
+import com.learning.princeton.algo.stacks.StackOfAnyType;
 import junit.framework.TestCase;
 
 /**

@@ -1,4 +1,4 @@
-package stacks;
+package com.learning.princeton.algo.stacks;
 
 import java.util.Stack;
 

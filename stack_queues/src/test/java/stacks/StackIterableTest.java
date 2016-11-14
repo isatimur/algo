@@ -1,5 +1,6 @@
 package stacks;
 
+import com.learning.princeton.algo.stacks.StackIterable;
 import junit.framework.TestCase;
 
 /**

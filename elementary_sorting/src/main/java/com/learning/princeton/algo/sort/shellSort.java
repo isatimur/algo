@@ -1,4 +1,4 @@
-package elementary.sort;
+package com.learning.princeton.algo.sort;
 
 /**
  * Created by abyakimenko on 13.11.2016.
@@ -34,26 +34,14 @@ public class shellSort {
         while (h >= 1) {
             // h-sort the array
             for (int i = h; i < length; i++) {
-                for (int j = i; j >= h && less(arrayOfInts[j], arrayOfInts[j-h]); j -= h) {
-                    exch(arrayOfInts, j, j-h);
+                for (int j = i; j >= h && less(arrayOfInts[j], arrayOfInts[j - h]); j -= h) {
+                    exch(arrayOfInts, j, j - h);
                 }
             }
-            assert isHsorted(arrayOfInts, h);
+//            assert isHsorted(arrayOfInts, h);
             h /= 3;
         }
-        assert isSorted(arrayOfInts);
-
-        for (int i = 0; i < arrayOfInts.length; ++i) {
-
-//            int[] tmpArray = Arrays.copyOfRange(arrayOfInts, i, arrayOfInts.length);
-//
-//            int minIndex = findMinIndex(tmpArray),
-//                    tmpVal = arrayOfInts[i];
-//
-//            // swapping
-//            arrayOfInts[i] = arrayOfInts[minIndex + i];
-//            arrayOfInts[minIndex + i] = tmpVal;
-        }
+//        assert isSorted(arrayOfInts);
     }
 
     /***************************************************************************
@@ -77,14 +65,14 @@ public class shellSort {
      ***************************************************************************/
     private static boolean isSorted(Comparable[] a) {
         for (int i = 1; i < a.length; i++)
-            if (less(a[i], a[i-1])) return false;
+            if (less(a[i], a[i - 1])) return false;
         return true;
     }
 
     // is the array h-sorted?
     private static boolean isHsorted(Comparable[] a, int h) {
         for (int i = h; i < a.length; i++)
-            if (less(a[i], a[i-h])) return false;
+            if (less(a[i], a[i - h])) return false;
         return true;
     }
 }

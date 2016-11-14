@@ -1,4 +1,4 @@
-package elementary.sort;
+package com.learning.princeton.algo.sort;
 
 import junit.framework.TestCase;
 
