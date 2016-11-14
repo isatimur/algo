@@ -1,6 +1,5 @@
 package com.learning.princeton.algo.search;
 
-import com.learning.princeton.algo.search.binarySearch;
 import junit.framework.TestCase;
 
 /**
@@ -18,11 +17,11 @@ public class binarySearchTest extends TestCase {
 
     public void testExecuteSearch() throws Exception {
 
-        assertEquals(16, binarySearch.executeSearch(arrayOfInt, 57));
-        assertEquals(17, binarySearch.executeSearch(arrayOfInt, 65));
-        assertEquals(6, binarySearch.executeSearch(arrayOfInt, 14));
-        assertEquals(-1, binarySearch.executeSearch(arrayOfInt, 23));
-        assertEquals(-1, binarySearch.executeSearch(arrayOfInt, 101));
+        assertEquals(16, BinarySearch.executeSearch(arrayOfInt, 57));
+        assertEquals(17, BinarySearch.executeSearch(arrayOfInt, 65));
+        assertEquals(6, BinarySearch.executeSearch(arrayOfInt, 14));
+        assertEquals(-1, BinarySearch.executeSearch(arrayOfInt, 23));
+        assertEquals(-1, BinarySearch.executeSearch(arrayOfInt, 101));
     }
 
 }

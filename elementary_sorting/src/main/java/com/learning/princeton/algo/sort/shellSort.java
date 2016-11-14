@@ -16,7 +16,7 @@ package com.learning.princeton.algo.sort;
  * Проверка: если {\displaystyle d>0} {\displaystyle d>0} — вернуться к пункту "1" основной части (и если {\displaystyle d=1} d=1 — для проведения обычной сортировки вставками);
  * Завершение работы (например, вывод результатов на экран).
  */
-public class shellSort {
+public class ShellSort {
 
     public static void executeSorting(Comparable[] arrayOfInts) {
 
