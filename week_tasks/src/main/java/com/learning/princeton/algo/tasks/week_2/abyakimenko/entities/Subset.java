@@ -1,5 +1,7 @@
 package com.learning.princeton.algo.tasks.week_2.abyakimenko.entities;
 
+import edu.princeton.cs.algs4.StdIn;
+
 /**
  * Subset client. Write a client program Subset.java that takes a command-line integer k; reads in a sequence of N strings
  * from standard input using StdIn.readString(); and prints out exactly k of them, uniformly at random. Each item from
@@ -22,15 +24,39 @@ package com.learning.princeton.algo.tasks.week_2.abyakimenko.entities;
  * public class Subset {
  * public static void main(String[] args)
  * }
- *
- *
+ * <p>
+ * <p>
  * (Результаты)
  * Deliverables. Submit only Deque.java, RandomizedQueue.java, and Subset.java. We will supply algs4.jar.
  * Your submission not call library functions except those in StdIn, StdOut, StdRandom, java.lang, java.util.Iterator,
  * and java.util.NoSuchElementException. In particular, you may not use either java.util.LinkedList or java.util.ArrayList.
  */
 public class Subset {
+
     public static void main(String[] args) {
 
+        if (args == null || args.length == 0) {
+            throw new RuntimeException("Arguments are empty!");
+        }
+
+        int k = Integer.parseInt(args[0]);
+        int n = k;
+
+        RandomizedQueue<String> randomizedQueue = new RandomizedQueue<>();
+
+        int i = 0;
+        while (!StdIn.isEmpty() && i < n) {
+            String string = StdIn.readString();
+            randomizedQueue.enqueue(string);
+            ++i;
+        }
+
+        print(randomizedQueue, k);
+    }
+
+    private static void print(RandomizedQueue<String> randomizedQueue, int k) {
+        for (int i = 0; i < k; i++) {
+            System.out.println(randomizedQueue.dequeue());
+        }
     }
 }
