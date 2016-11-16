@@ -45,9 +45,4 @@ public class DequeTest extends TestCase {
         deque.removeFirst();
         assertEquals(deque.isEmpty(), true);
     }
-
-    public void testIterator() throws Exception {
-
-    }
-
 }

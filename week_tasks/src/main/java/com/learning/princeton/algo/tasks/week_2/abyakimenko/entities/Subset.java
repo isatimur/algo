@@ -44,11 +44,9 @@ public class Subset {
 
         RandomizedQueue<String> randomizedQueue = new RandomizedQueue<>();
 
-        int i = 0;
-        while (!StdIn.isEmpty() && i < n) {
+        while (!StdIn.isEmpty()) {
             String string = StdIn.readString();
             randomizedQueue.enqueue(string);
-            ++i;
         }
 
         print(randomizedQueue, k);
