@@ -13,11 +13,11 @@ public class Banner {
         }
         /*А теперь главное - логика алгоритма*/
         int index = length - 1;
-        int number;
+        int randomNumber;
         while (index > 0) {
-            number = r.nextInt(index);
-            System.out.print(list[number] + " ");
-            list[number] = list[index];
+            randomNumber = r.nextInt(index);
+            System.out.print(list[randomNumber] + " ");
+            list[randomNumber] = list[index];
             --index;
         }
     }
