@@ -1,8 +1,5 @@
 package com.learning.princeton.algo.sort;
 
-/**
- * Created by abyakimenko on 13.11.2016.
- */
 public class InsertionSort {
 
     public static void executeSorting(int[] array) {

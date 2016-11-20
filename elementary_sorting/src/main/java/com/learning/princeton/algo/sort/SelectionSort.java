@@ -2,9 +2,6 @@ package com.learning.princeton.algo.sort;
 
 import java.util.Arrays;
 
-/**
- * Created by abyakimenko on 13.11.2016.
- */
 public class SelectionSort {
 
     public static void executeSorting(int[] arrayOfInts) {
