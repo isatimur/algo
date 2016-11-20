@@ -1,4 +1,6 @@
-package com.learning.princeton.algo.types;
+package com.learning.princeton.algo.search;
+
+import com.learning.princeton.algo.types.Point;
 
 /*************************************************************************
  *  Compilation:  javac LineSegment.java

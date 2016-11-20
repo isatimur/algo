@@ -62,13 +62,13 @@ public class Point implements Comparable<Point> {
     public double slopeTo(Point that) {
         /* YOUR CODE HERE */
 
-        int divider = that.y - this.y;
-        if (divider == 0 || this.equals(that)) {
-            throw new NullPointerException("the same point");
+        if (this.y - that.y == 0) {
+            return this.x - that.x == 0 ? Double.NEGATIVE_INFINITY : +0;
+        } else if (this.x - that.x == 0) {
+            return Double.POSITIVE_INFINITY;
         }
 
-        int slope = (that.x - this.x) / divider;
-        return slope;
+        return (that.y - this.y) / (double) (that.x - this.x);
     }
 
     /**
@@ -104,7 +104,22 @@ public class Point implements Comparable<Point> {
      */
     public Comparator<Point> slopeOrder() {
         /* YOUR CODE HERE */
-        return null;
+        return new Comparator<Point>() {
+            //  Formally, the point (x1, y1) is less than the point (x2, y2) if and only if
+            //  the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0)
+            @Override
+            public int compare(Point point1, Point point2) {
+
+                double slopeDiff = slopeTo(point1) - slopeTo(point2);
+                if (slopeDiff > 0) {
+                    return 1;
+                } else if (slopeDiff < 0) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
+        };
     }
 
 

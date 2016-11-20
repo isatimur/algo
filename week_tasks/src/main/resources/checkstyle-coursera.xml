@@ -76,7 +76,7 @@
             <property name="tokens" value="LITERAL_DO"/>
         </module>
 
-<!-- 
+<!--
         <module name="EmptyBlock">
             <property name="option" value="text"/>
             <message key="block.noStmt" value="A block must have at least one statement."/>

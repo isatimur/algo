@@ -1,6 +1,5 @@
 package com.learning.princeton.algo.sort;
 
-import com.learning.princeton.algo.search.SelectionSort;
 import junit.framework.TestCase;
 
 /**

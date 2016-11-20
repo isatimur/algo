@@ -16,32 +16,35 @@
     <artifactId>week.tasks</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <!--<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>2.17</version>
                 <dependencies>
+
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
                         <version>7.2</version>
                     </dependency>
+
                 </dependencies>
                 <configuration>
-                    <configLocation>src/main/resources/checkstyle-coursera.xml</configLocation>
+                    <!--<configLocation>src/main/resources/checkstyle-coursera.xml</configLocation>-->
+                    <sourceDirectory>${project.build.sourceDirectory}/com/learning/princeton/algo/tasks/week_3</sourceDirectory>
                 </configuration>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                     <!--   <phase>package</phase>
                         <goals>
                             <goal>check</goal>
-                        </goals>
+                        </goals>-->
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
 
 </project>

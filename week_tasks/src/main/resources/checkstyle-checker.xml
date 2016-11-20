@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+    <!-- directory where the .java file lives -->
+    <!-- the property "basedir" is passed as a -D command-line option to Java -->
+    <property name="basedir" value="${basedir}" default="/"/>
+
+    <property name="localeCountry" value="US"/>
+    <property name="localeLanguage" value="en"/>
+    <property name="charset" value="UTF-8"/>
+
+    <!-- Checks that no tab characters in the source code. -->
+    <!-- Reports only first instance. -->
+    <module name="FileTabCharacter">
+        <property name="fileExtensions" value="java, toy, txt"/>
+        <property name="eachLine" value="false"/>
+        <message key="containsTab" value="Line contains a tab character. Configure your editor to replace tabs with spaces."/>
+        <message key="file.containsTab" value="File contains tab characters (this is the first instance). Configure your editor to replace tabs with spaces."/>
+    </module>
+
+    <!-- Checks that no file is more than 1500 lines long. -->
+    <module name="FileLength">
+        <property name="max" value="1500"/>
+    </module>
+
+    <!-- Seems to flag too many .java files. Not sure why.
+        <module name="NewlineAtEndOfFile">
+            <property name="fileExtensions" value="java, xml, py"/>
+            <property name="lineSeparator" value="lf_cr_crlf"/>
+        </module>
+    -->
+
+    <!--
+        <module name="Translation"/>
+        <module name="UniqueProperties"/>
+    -->
+
+    <!-- =========================================================================== -->
+    <!-- =========================================================================== -->
+    <!--                   TREEWALKER BEGINS HERE                                    -->
+    <!-- =========================================================================== -->
+    <!-- =========================================================================== -->
+</module>

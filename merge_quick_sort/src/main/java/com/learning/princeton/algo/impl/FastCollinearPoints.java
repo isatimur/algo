@@ -1,6 +1,6 @@
 package com.learning.princeton.algo.impl;
 
-import com.learning.princeton.algo.types.LineSegment;
+import com.learning.princeton.algo.search.LineSegment;
 import com.learning.princeton.algo.types.Point;
 
 /**
