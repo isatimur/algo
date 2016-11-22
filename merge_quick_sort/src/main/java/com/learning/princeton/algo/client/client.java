@@ -1,6 +1,7 @@
 package com.learning.princeton.algo.client;
 
 import com.learning.princeton.algo.impl.BruteCollinearPoints;
+import com.learning.princeton.algo.impl.FastCollinearPoints;
 import com.learning.princeton.algo.search.LineSegment;
 import com.learning.princeton.algo.types.Point;
 import edu.princeton.cs.algs4.In;
@@ -30,21 +31,28 @@ public class client {
         }
         StdDraw.show();
 
-        // print and draw the line segments
-        BruteCollinearPoints bruteCollinearPoints = new BruteCollinearPoints(points);
-        for (LineSegment segment : bruteCollinearPoints.segments()) {
-            StdOut.println(segment);
-            segment.draw();
-        }
-        StdDraw.show();
+//        executeBruteCollinearAlgo(points);
+        executeFastCollinearAlgo(points);
+    }
 
-        // print and draw the line segments
-       /* FastCollinearPoints fastCollinearPoints = new FastCollinearPoints(points);
+    private static void  executeBruteCollinearAlgo(Point[] points) {
+
+        BruteCollinearPoints fastCollinearPoints = new BruteCollinearPoints(points);
         for (LineSegment segment : fastCollinearPoints.segments()) {
             StdOut.println(segment);
             segment.draw();
         }
-        StdDraw.show();*/
+        StdDraw.show();
+    }
+
+    private static void  executeFastCollinearAlgo(Point[] points) {
+
+        FastCollinearPoints fastCollinearPoints = new FastCollinearPoints(points);
+        for (LineSegment segment : fastCollinearPoints.segments()) {
+            StdOut.println(segment);
+            segment.draw();
+        }
+        StdDraw.show();
     }
 
     private static Point[] getPoints(String arg) {
