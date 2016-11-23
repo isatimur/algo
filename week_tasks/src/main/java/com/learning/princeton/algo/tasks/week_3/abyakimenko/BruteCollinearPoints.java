@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * Write a program BruteCollinearPoints.java that examines 4 points at a time and checks whether they all lie on the
  * same line segment, returning all such line segments. To check whether the 4 points p, q, r, and s are collinear,
@@ -41,6 +40,8 @@ public class BruteCollinearPoints {
                 for (int r = q + 1; r < points.length - 1; r++) {
                     for (int s = r + 1; s < points.length; s++) {
 
+                        // p->q && p->r
+                        // p->q && p->s
                         boolean pToQpToR = pointsCopy[p].slopeTo(pointsCopy[q]) == pointsCopy[p].slopeTo(pointsCopy[r]);
                         boolean pToQpToS = pointsCopy[p].slopeTo(pointsCopy[q]) == pointsCopy[p].slopeTo(pointsCopy[s]);
                         if (pToQpToR && pToQpToS) {

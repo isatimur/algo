@@ -62,9 +62,18 @@ public class Point implements Comparable<Point> {
     public double slopeTo(Point that) {
         /* YOUR CODE HERE */
 
-        if (this.y - that.y == 0) {
-            return this.x - that.x == 0 ? Double.NEGATIVE_INFINITY : +0;
-        } else if (this.x - that.x == 0) {
+        boolean zeroYCondition = this.y - that.y == 0; // horizontal
+        boolean zeroXCondition = this.x - that.x == 0; // vertical
+        // if the line segment connecting the two points is horizontal
+
+        if (zeroYCondition) {// if the line segment is horizontal
+            if (zeroXCondition) {
+                return Double.NEGATIVE_INFINITY;
+            } else {
+                return +0.0;
+            }
+//            return this.x - that.x == 0 ? Double.NEGATIVE_INFINITY : +0.0;
+        } else if (zeroXCondition) {// if the line segment is vertical
             return Double.POSITIVE_INFINITY;
         }
 
@@ -101,6 +110,7 @@ public class Point implements Comparable<Point> {
      * The slope is defined as in the slopeTo() method.
      * Formally, the point (x1, y1) is less than the point (x2, y2) if and only if
      * the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0)
+     *
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
@@ -140,5 +150,24 @@ public class Point implements Comparable<Point> {
      */
     public static void main(String[] args) {
         /* YOUR CODE HERE */
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Point point = (Point) o;
+
+        if (x != point.x) return false;
+        return y == point.y;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+        return result;
     }
 }

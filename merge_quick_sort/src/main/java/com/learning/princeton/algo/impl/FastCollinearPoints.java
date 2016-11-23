@@ -28,15 +28,21 @@ public class FastCollinearPoints {
 
     // we can group segments by slope
     private HashMap<Double, List<Point>> segmentsMap = new HashMap<>();
+    private HashMap<Double, List<Point>> resultMap = new HashMap<>();
 
     private List<LineSegment> segments = new ArrayList<>();
 
     // finds all line segments containing 4 or more points
     public FastCollinearPoints(Point[] points) {
 
+        checkDuplicates(points);
+
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
+        List<Point> slopePointMap = new ArrayList<>();
 
         for (Point pointQ : points) {
+
+            HashMap<Double, Set<Point>> slopesMap = new HashMap<>();
 
             // - For each other point q, determine the slope it makes with p.
             // - Sort the points according to the slopes they makes with p.
@@ -47,7 +53,21 @@ public class FastCollinearPoints {
             double previousSlope = Double.NEGATIVE_INFINITY;
 
             for (int i = 1; i < pointsCopy.length; i++) {
+
                 slope = pointQ.slopeTo(pointsCopy[i]);
+
+                final Point currentPoint = pointsCopy[i];
+                if (slopesMap.get(slope) == null) {
+
+                    slopesMap.put(slope, new HashSet<Point>() {{
+                        add(pointsCopy[0]);
+                        add(currentPoint);
+                    }});
+
+                } else {
+                    slopesMap.get(slope).add(currentPoint);
+                }
+
                 // slopes are equals
                 if (slope == previousSlope) {
                     slopePoints.add(pointsCopy[i]);
@@ -62,6 +82,20 @@ public class FastCollinearPoints {
                 }
                 previousSlope = slope;
             }
+
+            // fill map
+            for (Map.Entry<Double, Set<Point>> entrySet : slopesMap.entrySet()) {
+
+                if (entrySet.getValue().size() >= 3) {
+                    resultMap.put(entrySet.getKey(), new ArrayList<>(entrySet.getValue()));
+                }
+            }
+        }
+
+
+        // sort points
+        for (Map.Entry<Double, List<Point>> entrySet : resultMap.entrySet()) {
+            Collections.sort(entrySet.getValue());
         }
     }
 
@@ -96,5 +130,21 @@ public class FastCollinearPoints {
     // the line segments
     public LineSegment[] segments() {
         return segments.toArray(new LineSegment[numberOfSegments()]);
+    }
+
+    private void checkDuplicates(Point[] points) {
+
+        if (points == null) throw new NullPointerException();
+
+        for (int i = 0; i < points.length - 1; i++) {
+
+            if (points[i] == null) throw new NullPointerException();
+            for (int j = i + 1; j < points.length; j++) {
+
+                if (points[i].compareTo(points[j]) == 0) {
+                    throw new IllegalArgumentException("Duplicate entries was found!");
+                }
+            }
+        }
     }
 }

@@ -32,7 +32,11 @@ public class BruteCollinearPoints {
     // finds all line segments containing 4 points
     public BruteCollinearPoints(Point[] points) {
 
-        CheckDuplicates(points);
+        if (points == null) {
+            throw new NullPointerException();
+        }
+
+        checkDuplicates(points);
         List<LineSegment> foundLineSegments = new ArrayList<>();
 
         Point[] pointsCopy = Arrays.copyOf(points, points.length);
@@ -70,7 +74,7 @@ public class BruteCollinearPoints {
     }
 
     // compare by pairs
-    private void CheckDuplicates(Point[] points) {
+    private void checkDuplicates(Point[] points) {
 
         for (int i = 0; i < points.length - 1; i++) {
 

@@ -1,4 +1,5 @@
-package com.learning.princeton.algo.tasks.week_3.abyakimenko; /******************************************************************************
+package com.learning.princeton.algo.tasks.week_3.abyakimenko;
+/******************************************************************************
  *  Compilation:  javac Point.java
  *  Execution:    java Point
  *  Dependencies: none
@@ -99,14 +100,14 @@ public class Point implements Comparable<Point> {
     /**
      * Compares two points by the slope they make with this point.
      * The slope is defined as in the slopeTo() method.
-     *
+     * Formally, the point (x1, y1) is less than the point (x2, y2) if and only if
+     * the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0)
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
         /* YOUR CODE HERE */
         return new Comparator<Point>() {
-            //  Formally, the point (x1, y1) is less than the point (x2, y2) if and only if
-            //  the slope (y1 − y0) / (x1 − x0) is less than the slope (y2 − y0) / (x2 − x0)
+
             @Override
             public int compare(Point point1, Point point2) {
 
