@@ -1,5 +1,8 @@
 package com.learning.princeton.algo;
 
+import com.learning.princeton.algo.mergesort.MergeBottomUp;
+import com.learning.princeton.algo.mergesort.MergeSort;
+import com.learning.princeton.algo.mergesort.MergeSortV1;
 import org.junit.Before;
 import org.junit.Test;
 

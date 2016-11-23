@@ -1,5 +1,8 @@
 package com.learning.princeton.algo.sort;
 
+import static com.learning.princeton.algo.helpers.Helpers.exch;
+import static com.learning.princeton.algo.helpers.Helpers.less;
+
 /**
  * Created by abyakimenko on 13.11.2016.
  * <p>
@@ -42,37 +45,5 @@ public class ShellSort {
             h /= 3;
         }
 //        assert isSorted(arrayOfInts);
-    }
-
-    /***************************************************************************
-     *  Helper sorting functions.
-     ***************************************************************************/
-
-    // is v < w ?
-    private static boolean less(Comparable v, Comparable w) {
-        return v.compareTo(w) < 0;
-    }
-
-    // exchange a[i] and a[j]
-    private static void exch(Object[] a, int i, int j) {
-        Object swap = a[i];
-        a[i] = a[j];
-        a[j] = swap;
-    }
-
-    /***************************************************************************
-     *  Check if array is sorted - useful for debugging.
-     ***************************************************************************/
-    private static boolean isSorted(Comparable[] a) {
-        for (int i = 1; i < a.length; i++)
-            if (less(a[i], a[i - 1])) return false;
-        return true;
-    }
-
-    // is the array h-sorted?
-    private static boolean isHsorted(Comparable[] a, int h) {
-        for (int i = h; i < a.length; i++)
-            if (less(a[i], a[i - h])) return false;
-        return true;
     }
 }

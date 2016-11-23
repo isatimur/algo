@@ -1,4 +1,4 @@
-package com.learning.princeton.algo.client;
+package com.learning.princeton.algo.helpers;
 
 import java.io.IOException;
 import java.nio.file.*;

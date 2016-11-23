@@ -1,4 +1,4 @@
-package com.learning.princeton.algo;
+package com.learning.princeton.algo.mergesort;
 
 public class MergeSortV1 {
 

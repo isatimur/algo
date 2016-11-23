@@ -2,7 +2,7 @@ package com.learning.princeton.algo.client;
 
 import com.learning.princeton.algo.impl.BruteCollinearPoints;
 import com.learning.princeton.algo.impl.FastCollinearPoints;
-import com.learning.princeton.algo.search.LineSegment;
+import com.learning.princeton.algo.types.LineSegment;
 import com.learning.princeton.algo.types.Point;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;

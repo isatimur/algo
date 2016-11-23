@@ -1,6 +1,6 @@
-package com.learning.princeton.algo;
+package com.learning.princeton.algo.mergesort;
 
-import static com.learning.princeton.algo.Helpers.less;
+import static com.learning.princeton.algo.helpers.Helpers.less;
 
 /**
  * Created by abyakimenko on 20.11.2016.

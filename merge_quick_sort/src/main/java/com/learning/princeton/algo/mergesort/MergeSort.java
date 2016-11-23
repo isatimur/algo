@@ -1,4 +1,6 @@
-package com.learning.princeton.algo;
+package com.learning.princeton.algo.mergesort;
+
+import com.learning.princeton.algo.helpers.Helpers;
 
 /**
  * Created by abyakimenko on 20.11.2016.

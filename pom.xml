@@ -25,8 +25,9 @@
         <module>others</module>
         <module>stack_queues</module>
         <module>week_tasks</module>
-        <module>elementary_sorting</module>
+        <module>elementary-sorting</module>
         <module>merge_quick_sort</module>
+        <module>helpers</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -48,6 +49,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.learning.princeton.algo</groupId>
+            <artifactId>Helpers</artifactId>
+            <version>0.0.0.1</version>
+        </dependency>
         <dependency>
             <groupId>edu.princeton.cs</groupId>
             <artifactId>algs4</artifactId>
