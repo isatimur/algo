@@ -72,12 +72,14 @@ public class Point implements Comparable<Point> {
             } else {
                 return +0.0;
             }
-//            return this.x - that.x == 0 ? Double.NEGATIVE_INFINITY : +0.0;
         } else if (zeroXCondition) {// if the line segment is vertical
             return Double.POSITIVE_INFINITY;
         }
 
-        return (that.y - this.y) / (double) (that.x - this.x);
+        double deltaY = (double) (that.y - this.y);
+        double deltaX = (double) (that.x - this.x);
+
+        return deltaY /deltaX;
     }
 
     /**

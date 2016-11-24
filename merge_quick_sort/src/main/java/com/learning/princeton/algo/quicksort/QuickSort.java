@@ -34,7 +34,7 @@ public class QuickSort {
      * @param hi
      * @return
      */
-    private static int getSupportPoint(Comparable[] array, int l0, int hi) {
+    public static int getSupportPoint(Comparable[] array, int l0, int hi) {
 
         int i = l0;
         int j = hi + 1;

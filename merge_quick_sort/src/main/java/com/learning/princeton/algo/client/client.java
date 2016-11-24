@@ -83,6 +83,7 @@ public class client {
     private static void executeFastCollinearAlgo(Point[] points) {
 
         FastCollinearPoints fastCollinearPoints = new FastCollinearPoints(points);
+        System.out.println(fastCollinearPoints.segments().length + " was found");
         for (LineSegment segment : fastCollinearPoints.segments()) {
             StdOut.println(segment);
             segment.draw();
