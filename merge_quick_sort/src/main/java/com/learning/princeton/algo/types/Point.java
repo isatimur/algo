@@ -120,9 +120,9 @@ public class Point implements Comparable<Point> {
         return new Comparator<Point>() {
 
             @Override
-            public int compare(Point point1, Point point2) {
+            public int compare(Point thisPoint, Point thatPoint) {
 
-                double slopeDiff = slopeTo(point1) - slopeTo(point2);
+                double slopeDiff = slopeTo(thisPoint) - slopeTo(thatPoint);
                 if (slopeDiff > 0) {
                     return 1;
                 } else if (slopeDiff < 0) {
@@ -152,24 +152,5 @@ public class Point implements Comparable<Point> {
      */
     public static void main(String[] args) {
         /* YOUR CODE HERE */
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Point point = (Point) o;
-
-        if (x != point.x) return false;
-        return y == point.y;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
-        return result;
     }
 }

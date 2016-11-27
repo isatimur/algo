@@ -3,88 +3,51 @@ package com.learning.princeton.algo.impl;
 import com.learning.princeton.algo.types.LineSegment;
 import com.learning.princeton.algo.types.Point;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/**
- * A faster, sorting-based solution. Remarkably, it is possible to solve the problem much faster than the brute-force
- * solution described above. Given a point p, the following method determines whether p participates in a set of 4
- * or more collinear points.
- * <p>
- * Think of p as the origin.
- * - For each other point q, determine the slope it makes with p.
- * - Sort the points according to the slopes they makes with p.
- * - Check if any 3 (or more) adjacent points in the sorted order have equal slopes with respect to p. If so, these points,
- * together with p, are collinear.
- * <p>
- * !!!
- * Applying this method for each of the n points in turn yields an efficient algorithm to the problem.
- * !!!
- * <p>
- * The algorithm
- * solves the problem because points that have equal slopes with respect to p are collinear, and sorting brings such
- * points together. The algorithm is fast because the bottleneck operation is sorting.
- */
 public class FastCollinearPoints {
 
-    // we can group segments by slope
-    private HashMap<Double, List<Point>> resultMap = new HashMap<>();
+    private ArrayList<LineSegment> segments = new ArrayList<>();
 
-    private List<LineSegment> segments = new ArrayList<>();
-
-    // finds all line segments containing 4 or more points
     public FastCollinearPoints(Point[] points) {
+        // check corner cases
+        if (points == null)
+            throw new NullPointerException();
 
-        checkDuplicates(points);
-        Point[] pointsCopy = Arrays.copyOf(points, points.length);
+        Point[] jCopy = points.clone();
+        Arrays.sort(jCopy);
 
-        for (Point pointQ : points) {
+        if (hasDuplicate(jCopy)) {
+            throw new IllegalArgumentException("U have duplicate points");
+        }
+        // and now show must go on )))
 
-            HashMap<Double, Set<Point>> slopesMap = new HashMap<>();
+        for (int i = 0; i < jCopy.length - 3; i++) {
+            Arrays.sort(jCopy);
 
-            // - For each other point q, determine the slope it makes with p.
-            // - Sort the points according to the slopes they makes with p.
-            Arrays.sort(pointsCopy, pointQ.slopeOrder());
+            // Sort the points according to the slopes they makes with p.
+            // Check if any 3 (or more) adjacent points in the sorted order
+            // have equal slopes with respect to p. If so, these points,
+            // together with p, are collinear.
 
-            for (int i = 1; i < pointsCopy.length; i++) {
+            Arrays.sort(jCopy, jCopy[i].slopeOrder());
 
-                final Point currentPoint = pointsCopy[i];
-                double slope = pointQ.slopeTo(currentPoint);
-
-                if (slopesMap.get(slope) == null) {
-
-                    HashSet<Point> pointSet = new HashSet<>();
-                    pointSet.add(pointsCopy[0]);
-                    pointSet.add(currentPoint);
-
-                    slopesMap.put(slope, pointSet);
-
-                } else {
-                    slopesMap.get(slope).add(currentPoint);
+            for (int p = 0, first = 1, last = 2; last < jCopy.length; last++) {
+                // find last collinear to p point
+                while (last < jCopy.length
+                        && Double.compare(jCopy[p].slopeTo(jCopy[first]), jCopy[p].slopeTo(jCopy[last])) == 0) {
+                    last++;
                 }
-
-                // fill map
-                for (Map.Entry<Double, Set<Point>> entrySet : slopesMap.entrySet()) {
-
-                    if (entrySet.getValue().size() >= 3) {
-                        // sort points inside segments
-                        List<Point> tmpList = new ArrayList<>(entrySet.getValue());
-                        Collections.sort(tmpList);
-                        resultMap.put(entrySet.getKey(), Arrays.asList(tmpList.get(0), tmpList.get(tmpList.size() - 1)));
-                    }
+                // if found at least 3 elements, make segment if it's unique
+                if (last - first >= 3 && jCopy[p].compareTo(jCopy[first]) < 0) {
+                    segments.add(new LineSegment(jCopy[p], jCopy[last - 1]));
                 }
+                // Try to find next
+                first = last;
             }
         }
-
-        fillSegments();
-    }
-
-    private void fillSegments() {
-
-        for (Map.Entry<Double, List<Point>> entrySet : resultMap.entrySet()) {
-
-            List<Point> tmpList = entrySet.getValue();
-            segments.add(new LineSegment(tmpList.get(0), tmpList.get(tmpList.size() - 1)));
-        }
+        // finds all line segments containing 4 or more points
     }
 
     // the number of line segments
@@ -94,22 +57,17 @@ public class FastCollinearPoints {
 
     // the line segments
     public LineSegment[] segments() {
-        return segments.toArray(new LineSegment[numberOfSegments()]);
+        return segments.toArray(new LineSegment[segments.size()]);
     }
 
-    private void checkDuplicates(Point[] points) {
-
-        if (points == null) throw new NullPointerException();
-
+    // test the whole array fo duplicate points
+    private boolean hasDuplicate(Point[] points) {
         for (int i = 0; i < points.length - 1; i++) {
-
-            if (points[i] == null) throw new NullPointerException();
-            for (int j = i + 1; j < points.length; j++) {
-
-                if (points[i].compareTo(points[j]) == 0) {
-                    throw new IllegalArgumentException("Duplicate entries was found!");
-                }
+            if (points[i].compareTo(points[i + 1]) == 0) {
+                return true;
             }
         }
+        return false;
     }
+
 }
