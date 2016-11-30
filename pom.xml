@@ -28,6 +28,7 @@
         <module>elementary-sorting</module>
         <module>merge_quick_sort</module>
         <module>helpers</module>
+        <module>heaps</module>
     </modules>
 
     <packaging>pom</packaging>
